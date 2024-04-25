@@ -1,0 +1,14 @@
+<div class=" card w-75 m-auto my-3">
+  <div class="card-body">
+    <h5 class="card-title text-center">
+      <%= course.title %>
+    </h5>
+    <p class="card-text">
+      <%= course.description.substring(0, 150) + '...' %>
+    </p>
+    <span><strong>Amount: <%= course.amount %>$</strong></span>
+    <div class="float-end">
+      <a href="/course/<%= course._id %>" class="card-link">View Course</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<% include Partials/header.ejs %>
+  <div class="card w-100 m-4">
+    <div class="card-body">
+      <h5 class="card-title text-center">
+        <%= course.title %>
+      </h5>
+      <p class="card-text">
+        <%= course.description %>
+          <span><strong>Price: <%= course.amount %>$</strong></span>
+      </p>
+      <div class="flo">
+        <% if (!enrollment) { %>
+          <a href="/enroll-course/<%= course._id %>" class="btn btn-outline-dark me-3 w-100">Enroll Course</a>
+          <% } %>
+            <% if (enrollment) { %>
+
+              <a href="/cancel-enrollment/<%= enrollment._id %>/<%= course._id %>" class="btn btn-danger w-100">Cancel
+                Enrollment</a>
+              <% } %>
+      </div>
+    </div>
+  </div>
+
+
+  <% include Partials/footer.ejs%>

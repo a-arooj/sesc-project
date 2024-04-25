@@ -1,0 +1,15 @@
+<% include Partials/header.ejs %>
+  <h4 class="text-center">
+    <%= title %>
+  </h4>
+  <div class="row m-auto">
+    <% if (courses) { %>
+      <% courses.forEach(course=> { %>
+        <% include Partials/course.ejs %>
+          <% }) %>
+            <% } %>
+              <% if (!courses) { %>
+                <h5 class="text-center">Courses not found</h5>
+                <% } %>
+  </div>
+  <% include Partials/footer.ejs%>

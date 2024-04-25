@@ -1,0 +1,16 @@
+<% include Partials/header.ejs %>
+  <h4 class="text-center">Your Graduation Status</h4>
+  <p class="text-center">You need to pay your all Outstanding Invoices</p>
+  <p class="text-center">Your Graduation Status is:
+    <b>
+      <% if (hasOutstandingBalance) { %>
+        ineligible
+
+        <% } %>
+          <% if (!hasOutstandingBalance) { %>
+            Eligible
+
+            <% } %>
+    </b>
+  </p>
+  <% include Partials/footer.ejs%>

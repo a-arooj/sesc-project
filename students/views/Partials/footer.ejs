@@ -1,0 +1,126 @@
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginFormModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="login-form">
+          <div class="form-box">
+            <form action="/users/login" method="post">
+              <div class="form-group">
+                <label for="name">Username</label>
+                <input class="form-control" type="text" name="username">
+              </div>
+              <div class="form-group">
+                <label for="email">Password</label>
+                <input class="form-control" type="password" name="password">
+              </div>
+              <input class="btn btn-primary w-100 my-2" type="submit" value="Submit" />
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- signup Modal -->
+<div class="modal fade" id="signupFormModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Account</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="login-form">
+          <div class="form-box">
+            <form action="/users/register" method="post">
+              <div class="form-group">
+                <label for="name">Username</label>
+                <input class="form-control" type="text" name="username">
+              </div>
+              <div class="form-group">
+                <label for="name">Email</label>
+                <input class="form-control" type="email" name="email">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Password</label>
+                <input class="form-control" type="password" name="password">
+              </div>
+              <div class="form-group">
+                <label for="email">Confirm Password</label>
+                <input class="form-control" type="password" name="password2">
+              </div>
+              <input class="btn btn-primary w-100 my-2" type="submit" value="Submit" />
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<% if (authenticated) { %>
+
+  <!-- update profile Modal -->
+  <div class="modal fade" id="updateProfile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Profile Account</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="login-form">
+            <div class="form-box">
+              <form action="/users/update-profile" method="post">
+                <div class="form-group">
+                  <label for="name">Username</label>
+                  <input class="form-control" type="text" name="username" value="<%= user.username %>">
+                </div>
+                <div class="form-group">
+                  <label for="name">Email</label>
+                  <input class="form-control" type="email" name="email" value="<%= user.email %>">
+                </div>
+                <div class="form-group">
+                  <label for="name">First Name</label>
+                  <input class="form-control" type="text" name="first_name" value="<%= user.first_name %>">
+                </div>
+                <div class="form-group">
+                  <label for="name">Last Name</label>
+                  <input class="form-control" type="text" name="last_name" value="<%= user.last_name %>">
+                </div>
+
+                <input class="btn btn-primary w-100 my-2" type="submit" value="Submit" />
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <% } %>
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    </body>
+
+    </html>
